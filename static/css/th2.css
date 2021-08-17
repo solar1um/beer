@@ -1,0 +1,80 @@
+#a1 {
+position: absolute;
+top: 300px;
+
+}
+
+#a2 {
+position: absolute;
+left: 1500px;
+top: 300px;
+transform: scale(-1, 1)
+
+}
+
+#a3 {
+position: absolute;
+left: 500px;
+color: #FFD700;
+font-size:100px;
+
+}
+
+#a4 {
+position: absolute;
+top: 30px ;
+
+}
+.ys {
+position: absolute;
+left: 1500px;
+top: 30px 
+}
+
+
+#a6 {
+text-stroke: 10px black;
+color: #FFAA00;
+left: 500px;
+}
+
+.button {
+  /* background-image: url ("../images/beer_but.png"); */
+  background-color: #FFA500;
+  border: #00000;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 19px;
+}
+
+.a100 {
+position: absolute;
+text-align: center;
+width: 100%;
+color: #FFD700;
+font-size:50px;
+top: 200px;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
