@@ -59,7 +59,45 @@ rand_prip = [
     'B_TANKE',
     'FOOTBOLL',
     'bOPEC',
-    ''
+    'RSDRPb',
+    'RSDRPm',
+    'RKPB',
+    'RKPm',
+    'Cyku_KOMHE',
+    'Coca-coJla',
+    'CTAJLUH',
+    'JLEHUH',
+    'kgz',
+    'kg',
+    'orbit',
+    'dirol',
+    'barbie',
+    'bEbPA',
+    'no_JILu3HU',
+    'KEHT',
+    'POKEP',
+    'MEHT',
+    'NOTEBOOK',
+    'moned',
+    'XOHDA',
+    '4oTkuu',
+    'COBETHUK',
+    '3oJloTou',
+    '3oBuTe',
+    'KAPACUK',
+    'CHAUnEP',
+    'XX',
+    'PRO100',
+    'GAMADRIL',
+    'rolls',
+    'scorpion',
+    'OJleHb',
+
+
+
+
+
+
 
 
 ]
