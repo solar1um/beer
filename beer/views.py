@@ -92,6 +92,7 @@ rand_prip = [
     'rolls',
     'scorpion',
     'OJleHb',
+    'stalnoj'
 
 
 
@@ -163,13 +164,16 @@ dictionary = {
 
 
 def generation(request):
-
     if request.method == 'POST':
         form = GenForm(request.POST)
         if form.is_valid():
             form.save()
-
     name = Generation.objects.all().values_list('name', flat=True).last()
+
+    if name is None:
+        name = 'there should be a nickname'
+    else:
+        pass
     form = GenForm
 
     res = []
