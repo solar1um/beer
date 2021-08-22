@@ -1,0 +1,83 @@
+{% load static %}
+{% load crispy_forms_tags %}
+{% block styles %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'css/th2.css' %}" type="text/css">
+{% endblock styles %}
+<!DOCTYPE html>
+<html>
+
+
+<head>
+        <h5 id="a6">design by solarium</h5>
+
+        <h1 id="a3">BEER NICKNAMES</h1>
+    <div class="a100">{{ name }} </div>
+
+    <!--		<link rel="shortcut icon" href="D:\photos for html/favicon.ico" type="image/x-icon">-->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+    <meta charset="UTF-8">
+
+
+
+
+
+    <title>BeerNickNames</title>
+</head>
+
+<body>
+<nav>
+
+    <form method="post" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)" />
+
+        {% csrf_token %}
+        {{ form|crispy }}
+          <style>
+        form{
+          text-align: center;
+            margin-top: 300;
+
+        }
+
+    </style>
+        <br>
+
+<button id="1" type="submit" class="button">Generate</button>    </form>
+    <script>
+var input = document.getElementById("myInput");
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("1").click();
+    }
+});
+</script>
+
+
+</nav>
+<div class="divv">
+    <style>
+    divv{
+    overflow: hidden;
+    }
+</style>
+
+</div>
+
+
+<img id="a1" src="{% static 'images/beer_icon.jpg' %}" width="400">
+<img id="a2" src="{% static 'images/beerka.jpg' %}" width="400">
+<a href="https://vk.com/solar1um" target="_blank"><img id="a4" src="{% static 'images/vkontakt.png' %}"
+                                                        width="400"></a>
+<div class="ys"><a href="https://www.youtube.com/channel/UCpiXcWeO4xJhTdf20mXe3UQ" target="_blank"><img
+        src="{% static 'images/utub.jpg' %}" width="400"></a></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+</body>
+
+</html>
