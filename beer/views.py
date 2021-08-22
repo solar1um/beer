@@ -178,7 +178,10 @@ def generation(request):
 
     res = []
     for i in name:
-        res.append(dictionary[i])
+        if i in dictionary.keys():
+            res.append(dictionary[i])
+        else:
+            res.append(i)
     res = ''.join(res)
     if random.getrandbits(2) == 1:
         name = f'{random.choice(rand_prip)}_{res}_{str(random.randrange(1958, 1993))}'
