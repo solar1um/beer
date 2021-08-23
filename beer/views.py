@@ -103,8 +103,136 @@ rand_prip = [
 
 ]
 
+# dictionary = {
+#         ' ': ' ',
+#         '.': '.',
+#         'a': 'a',
+#         'A': 'a',
+#         'b': 'b',
+#         'B': 'b',
+#         'c': 'c',
+#         'C': 'c',
+#         'D': 'D',
+#         'd': 'D',
+#         'E': 'E',
+#         'e': 'e',
+#         'F': 'F',
+#         'f': 'F',
+#         'G': 'r',
+#         'g': 'r',
+#         'H': 'X',
+#         'h': 'X',
+#         'I': 'U',
+#         'i': 'u',
+#         'J': 'JlL',
+#         'j': 'JlL',
+#         'K': 'K',
+#         'k': 'k',
+#         'L': 'JL',
+#         'l': 'JL',
+#         'M': 'M',
+#         'm': 'm',
+#         'N': 'H',
+#         'n': 'H',
+#         'O': 'O',
+#         'o': 'o',
+#         'P': 'n',
+#         'p': 'n',
+#         'Q': 'Ky',
+#         'q': 'Ky',
+#         'R': 'P',
+#         'r': 'p',
+#         'S': 'C',
+#         's': 'c',
+#         't': 'T',
+#         'T': 'T',
+#         'U': 'Y',
+#         'u': 'y',
+#         'V': 'B',
+#         'v': 'B',
+#         'W': 'B',
+#         'w': 'B',
+#         'X': 'X',
+#         'x': 'x',
+#         'Y': 'Y',
+#         'y': 'y',
+#         'Z': '3',
+#         'z': '3',
+#         '?': '?',
+#
+#     }
+
 dictionary = {
-        ' ': ' ',
+    'а': 'a',
+    'А': 'A',
+    'Б': 'b',
+    'б': 'b',
+    'В': 'B',
+    'в': 'B',
+    'Г': 'r',
+    'г': 'r',
+    'Д': 'D',
+    'д': 'D',
+    'Е': 'E',
+    'е': 'e',
+    'Ё': 'E',
+    'ё': 'e',
+    'Ж': 'JIL',
+    'ж': 'JIL',
+    'З': '3',
+    'з': '3',
+    'И': 'U',
+    'и': 'u',
+    'Й': 'U',
+    'й': 'u',
+    'К': 'K',
+    'к': 'k',
+    'Л': 'Jl',
+    'л': 'Jl',
+    'М': 'M',
+    'м': 'm',
+    'Н': 'H',
+    'н': 'H',
+    'О': 'O',
+    'о': 'o',
+    'П': 'n',
+    'п': 'n',
+    'Р': 'P',
+    'р': 'p',
+    'С': 'C',
+    'с': 'c',
+    'Т': 'T',
+    'т': 'T',
+    'У': 'y',
+    'у': 'y',
+    'Ф': 'F',
+    'ф': 'f',
+    'Х': 'X',
+    'х': 'x',
+    'Ц': 'Ul',
+    'ц': 'Ul',
+    'Ч': '4',
+    'ч': '4',
+    'Ш': 'JIL',
+    'ш': 'JIL',
+    'Щ': 'JIL',
+    'щ': 'JIL',
+    'Ъ': 'b',
+    'ъ': 'b',
+    'Ы': 'bl',
+    'ы': 'bl',
+    'Ь': 'b',
+    'ь': 'b',
+    'Э': '3',
+    'э': '3',
+    'Ю': 'IO',
+    'ю': 'IO',
+    'Я': 'R',
+    'я': 'R',
+
+
+
+' ': ' ',
         '.': '.',
         'a': 'a',
         'A': 'a',
@@ -159,10 +287,7 @@ dictionary = {
         'Z': '3',
         'z': '3',
         '?': '?',
-        'sh': 'Lll',
-
-    }
-
+ }
 
 def generation(request):
     if request.method == 'POST':
@@ -175,21 +300,25 @@ def generation(request):
         name = 'there should be a nickname'
     else:
         pass
-    form = GenForm
 
+    form = GenForm
     res = []
     for i in name:
         if i in dictionary.keys():
             res.append(dictionary[i])
         else:
             res.append(i)
+
     res = ''.join(res)
     if random.getrandbits(2) == 1:
         name = f'{random.choice(rand_prip)}_{res}_{str(random.randrange(1958, 1993))}'
+
     elif random.getrandbits(2) == 2:
         name = f'{str(random.randrange(1958, 1993))}_{ res }_{random.choice(rand_prip)}'
+
     else:
         name = f'{str(random.randrange(1958, 1993))}_{res}_{random.choice(rand_prip)}__'
+
     context = {
         'name': name,
         'form': form
