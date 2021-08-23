@@ -106,6 +106,7 @@ rand_prip = [
 dictionary = {
         ' ': ' ',
         '.': '.',
+        'sh': 'Lll',
         'a': 'a',
         'A': 'a',
         'b': 'b',
